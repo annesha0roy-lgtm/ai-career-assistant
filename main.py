@@ -1,42 +1,60 @@
-print("================================")
-print("      AI CAREER ASSISTANT")
-print("================================")
 
-name = input("What is your name? ")
-interest = input("What area are you interested in? ")
+print("=" * 40)
+print("       AI CAREER ASSISTANT")
+print("=" * 40)
 
-print("\nHello,", name + "!")
+name = input("Enter your name: ")
 
-if "ai" in interest.lower():
-    print("\nCareer suggestions:")
-    print("- AI/ML Engineer")
-    print("- AI Application Developer")
-    print("- Python Developer")
+print("\nChoose your area of interest:")
+print("1. Artificial Intelligence")
+print("2. Web Development")
+print("3. Data Analytics")
+print("4. Software Development")
 
-    print("\nRecommended roadmap:")
-    print("1. Learn Python")
-    print("2. Learn NumPy and Pandas")
-    print("3. Learn Machine Learning")
-    print("4. Explore LLMs")
-    print("5. Build AI projects")
+choice = input("\nEnter your choice (1-4): ")
 
-elif "web" in interest.lower():
-    print("\nCareer suggestions:")
-    print("- Frontend Developer")
-    print("- Backend Developer")
-    print("- Full Stack Developer")
+careers = {
+    "1": {
+        "roles": ["AI/ML Intern", "Python Developer", "AI Application Developer"],
+        "skills": ["Python", "NumPy", "Pandas", "Machine Learning", "LLMs"]
+    },
+    "2": {
+        "roles": ["Frontend Developer", "Backend Developer", "Full Stack Developer"],
+        "skills": ["HTML", "CSS", "JavaScript", "APIs", "Databases"]
+    },
+    "3": {
+        "roles": ["Data Analyst", "Business Analyst", "Junior Data Scientist"],
+        "skills": ["Python", "SQL", "Excel", "Pandas", "Data Visualization"]
+    },
+    "4": {
+        "roles": ["Software Developer", "Application Developer", "Backend Engineer"],
+        "skills": ["Python", "Data Structures", "Algorithms", "Git", "APIs"]
+    }
+}
 
-    print("\nRecommended roadmap:")
-    print("1. Learn HTML and CSS")
-    print("2. Learn JavaScript")
-    print("3. Learn a backend language")
-    print("4. Learn databases")
-    print("5. Build web projects")
+if choice in careers:
+    result = careers[choice]
+
+    print(f"\nHello, {name}!")
+    print("\nSuggested career paths:")
+
+    for role in result["roles"]:
+        print("-", role)
+
+    print("\nRecommended skills to learn:")
+
+    for skill in result["skills"]:
+        print("-", skill)
+
+    print("\nYour learning roadmap:")
+    print("1. Learn the fundamentals")
+    print("2. Practice through small exercises")
+    print("3. Build practical projects")
+    print("4. Create a portfolio")
+    print("5. Apply for internships")
 
 else:
-    print("\nCareer suggestions:")
-    print("- Software Developer")
-    print("- Technical Analyst")
-    print("- Data Analyst")
+    print("\nInvalid choice. Please restart and select 1-4.")
 
-print("\nKeep learning and keep building! 🚀")
+print("\nKeep learning and building!")
+
